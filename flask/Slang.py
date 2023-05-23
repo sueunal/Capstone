@@ -16,7 +16,7 @@ def fuck_lang_filter(text_list):
                 if i == '존나' or i == '아씨' or i == '미친': # 필터링 할 문자
                         print('비속어가 발견 되었습니다.')
                         lang_score = lang_score - slang
-        return "비속어 점수는 : " + lang_score + "입니다"
+        return lang_score
 
 def Consistency(text_list, script_list):
       text_score = 100 # 초기 점수 100점에서 틀릴 때마다 -5하는 방식

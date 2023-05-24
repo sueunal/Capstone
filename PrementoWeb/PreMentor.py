@@ -4,8 +4,8 @@ import speech_recognition as sr
 import pandas as pd
 import numpy as np
 import plotly.figure_factory as ff
-from Slang import *
-from Virustotal import *
+from PreMentorModule.Slang import *
+from PreMentorModule.Virustotal import *
 
 def save_uploaded_file(directory, file) :
     # 1.디렉토리가 있는지 확인하여, 없으면 디렉토리부터만든다.

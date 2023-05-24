@@ -2,8 +2,6 @@ import streamlit as st
 import os
 import speech_recognition as sr
 import pandas as pd
-import numpy as np
-import plotly.figure_factory as ff
 from PreMentorModule.Slang import *
 from PreMentorModule.Virustotal import *
 
@@ -39,6 +37,8 @@ for uploaded_file in uploaded_files:
     st.write("filename:", uploaded_file.name)
     save_uploaded_file('temp',uploaded_file)
 
+
+
 if st.button("결과 확인!"):
     r  = sr.Recognizer()
     with sr.AudioFile("temp/"+ uploaded_file.name) as source:
@@ -47,7 +47,6 @@ if st.button("결과 확인!"):
     text_list = origin_text.split()  # 텍스트를 빈칸 기준으로 자라서 배열로 만들기
     awkward_score = slang_filter(text_list=text_list)
     slang_score =  fuck_lang_filter(text_list=text_list)
-
     st.write("#### 📝결과화면")
     data = pd.DataFrame({
         '어색한 단어 점수': [awkward_score,0,0],
